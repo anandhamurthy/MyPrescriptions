@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_view_image"
+                android:layout_width="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/profile_placeholder"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/result_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_view_image"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/result_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/result_name"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Email Address"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <TableLayout android:layout_width="fill_parent"
+                android:id="@+id/result_table"
+                android:layout_below="@+id/result_email"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6">
+                <TableRow>
+                    <TextView
+                        android:text="Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name"
+                        android:layout_weight="10"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Mor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/morning"
+                        android:textColor="@color/colorAccent"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Aft"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/afternoon"
+                        android:textColor="@color/colorAccent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Eve"
+                        android:id="@+id/evening"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorAccent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:text="Nig"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/night"
+                        android:textColor="@color/colorAccent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:text="Qty"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/quantity"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                </TableRow>
+            </TableLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/result_table"
+                android:id="@+id/prescription_list"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/result_approve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="28dp"
+            android:src="@drawable/save"
+            app:borderWidth="0dp"
+            app:elevation="6dp"
+            app:pressedTranslationZ="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

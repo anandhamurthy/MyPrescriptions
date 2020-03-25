@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/details_profile_image"
+                android:layout_width="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/profile_placeholder"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/details_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_profile_image"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Name"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/details_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/details_name"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Email Address"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/details_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@+id/details_email"
+                android:text="Patients Problem details Ex. cold, fever"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/quicksand_medium"
+                android:layout_margin="10dp"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/details_timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:layout_gravity="center"
+                android:layout_below="@+id/details_details"
+                android:text="Timestamp"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="10dp"
+                android:textSize="18dp" />
+
+
+            <TableLayout android:layout_width="fill_parent"
+                android:id="@+id/details_table"
+                android:layout_below="@+id/details_timestamp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6">
+                <TableRow>
+                    <TextView
+                        android:text="Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:layout_weight="10"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Mor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/morning"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:textColor="@color/colorAccent"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Aft"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/afternoon"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:text="Eve"
+                        android:id="@+id/evening"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:text="Nig"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/night"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:textColor="@color/colorAccent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:text="Qty"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/quantity"
+                        android:fontFamily="@font/quicksand_medium"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                </TableRow>
+            </TableLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_below="@+id/details_table"
+                android:layout_height="wrap_content"
+                android:id="@+id/prescription_list"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

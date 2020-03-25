@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".SourceActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credits"
+        android:textSize="20dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="QR Generator and Scanner"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:textColor="@color/colorBlack"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Android library projects that provides easy to use and extensible Barcode Scanner views based on ZXing and ZBar. Almost all of the code for these library projects is based on:
+
+CameraPreview app from Android SDK APIDemos
+The ZXing project: https://github.com/zxing/zxing
+The ZBar Android SDK: http://sourceforge.net/projects/zbar/files/AndroidSDK/
+Contributors
+https://github.com/dm77/barcodescanner/graphs/contributors
+
+License
+Apache License, Version 2.0"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="@font/quicksand_medium"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

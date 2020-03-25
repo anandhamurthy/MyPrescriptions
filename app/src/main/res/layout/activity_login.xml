@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Enter your phone number"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/login_details_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:textSize="18dp"
+                android:layout_below="@id/login_text"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="My Prescriptions will send a SMS message to verify your phone number."
+                android:textColor="@color/colorBlack" />
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/login_country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="30dp"
+                app:ccp_defaultCode="91"
+                android:layout_below="@+id/login_details_text" />
+            <EditText
+                android:id="@+id/login_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:drawableLeft="@drawable/phone"
+                android:layout_marginStart="30dp"
+                android:drawablePadding="10dp"
+                android:textSize="20dp"
+                android:hint="Mobile number"
+                android:layout_marginEnd="30dp"
+                android:layout_below="@+id/login_country_code"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="phone"
+                android:maxLength="10" />
+
+        </RelativeLayout>
+
+
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/login_verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Verify"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
