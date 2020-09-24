@@ -45,8 +45,11 @@ class QRActivity : AppCompatActivity() {
                     val profile_image = dataSnapshot.child("profile_image").value!!.toString()
                     val name = dataSnapshot.child("name").value!!.toString()
                     val email = dataSnapshot.child("email_id").value!!.toString()
+                    val phone_number = dataSnapshot.child("phone_number").value!!.toString()
                     val gender = dataSnapshot.child("gender").value!!.toString()
                     val age = dataSnapshot.child("age").value!!.toString()
+
+                    val address = dataSnapshot.child("address").value!!.toString()
                     val state = dataSnapshot.child("state").value!!.toString()
                     val city = dataSnapshot.child("city").value!!.toString()
                     val country = dataSnapshot.child("country").value!!.toString()
@@ -58,18 +61,18 @@ class QRActivity : AppCompatActivity() {
                     qr_gender.setText(gender)
                     qr_age.setText(age)
                     qr_gender.setText(gender)
-                    qr_city.setText(city)
-                    qr_state.setText(state)
-                    qr_country.setText(country)
+                    qr_address.setText(address+", "+city+", "+state+", "+country)
 
                     val user = ProfileObjects(
                         profile_image,
                         name,
                         email,
+                        phone_number,
                         gender,
                         age,
                         state,
                         city,
+                        address,
                         country,
                         mCurrentUserId
                     )

@@ -1,10 +1,14 @@
 package com.myprescriptions;
 
+import android.Manifest;
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -36,6 +40,7 @@ import com.myprescriptions.Adapter.PrescriptionsAdapter;
 import com.myprescriptions.models.Prescriptions;
 import com.myprescriptions.models.Users;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -53,12 +58,20 @@ public class MainActivity extends AppCompatActivity implements PrescriptionsAdap
     private DatabaseReference mMyPrescriptions;
     private RelativeLayout mNoPrescriptons;
 
+    public static ProgressDialog mProgressDialog;
+
     private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mProgressDialog = new ProgressDialog(MainActivity.this);
+        mProgressDialog.setTitle("Loading");
+        mProgressDialog.setMessage("Loading");
+        mProgressDialog.show();
+        mProgressDialog.setCanceledOnTouchOutside(false);
 
         mProfile = findViewById(R.id.profile);
         mAddPrescription = findViewById(R.id.add_prescription);
@@ -67,7 +80,13 @@ public class MainActivity extends AppCompatActivity implements PrescriptionsAdap
 
         mNoPrescriptons = findViewById(R.id.no_prescriptions);
 
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                make_directory(Details.app_folder);
+            }else{
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -265,6 +284,16 @@ public class MainActivity extends AppCompatActivity implements PrescriptionsAdap
     @Override
     public void onSearchSelected(Prescriptions prescription) {
 
+    }
+
+    private void make_directory(String path){
+        File dir = new File(path);
+        if(!dir.exists())
+        {
+            dir.mkdir();
+
+
+        }
     }
 }
 

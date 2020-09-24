@@ -11,8 +11,8 @@ android {
         applicationId "com.myprescriptions"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -53,4 +53,5 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.4.+'
     implementation 'com.github.joielechong:countrycodepicker:2.4.1'
     implementation "com.android.support:support-compat:28.0.0"
+    implementation 'com.itextpdf:itextpdf:5.5.13'
 }

@@ -16,7 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    private TextView Details_Name, Details_Email, Details_Details, Details_Timestamp;
+    private TextView Details_Name, Details_Phone_Number, Details_Email, Details_Details, Details_Timestamp;
     private CircleImageView Details_Profile_Image;
     private RecyclerView Medicine_List;
     @Override
@@ -31,6 +31,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Details_Name=findViewById(R.id.details_name);
         Details_Email=findViewById(R.id.details_email);
+        Details_Phone_Number=findViewById(R.id.details_phone_number);
         Details_Details=findViewById(R.id.details_details);
         Details_Timestamp=findViewById(R.id.details_timestamp);
         Details_Profile_Image=findViewById(R.id.details_profile_image);
@@ -38,6 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Details_Name.setText(prescription.getName());
         Details_Email.setText(prescription.getEmail());
+        Details_Phone_Number.setText(prescription.getPhone_number());
         Details_Details.setText(prescription.getDetails());
         Details_Timestamp.setText(prescription.getTimestamp());
 

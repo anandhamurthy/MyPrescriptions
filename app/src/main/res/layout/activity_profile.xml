@@ -6,7 +6,6 @@
     android:background="@color/colorWhite">
 
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,9 +57,10 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/quicksand_medium"
                         android:hint="Name"
+                        android:maxLength="25"
                         android:inputType="textCapWords"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/age_text"
@@ -77,7 +77,7 @@
                         android:hint="Age"
                         android:inputType="number"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -91,7 +91,7 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:text="Male"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:checked="true"
                         android:id="@+id/edit_profile_male"
                         android:layout_weight="1"
@@ -102,7 +102,7 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:text="Female"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:id="@+id/edit_profile_female"
                         android:layout_weight="1"
                         android:textColor="@color/colorBlack"
@@ -112,7 +112,7 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:text="Others"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:layout_weight="1"
                         android:id="@+id/edit_profile_others"
                         android:textColor="@color/colorBlack"
@@ -135,7 +135,7 @@
                         android:hint="Address"
                         android:inputType="textCapWords"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -153,7 +153,7 @@
                         android:hint="City"
                         android:inputType="textCapWords"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -171,7 +171,7 @@
                         android:hint="State"
                         android:inputType="textCapWords"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -189,7 +189,7 @@
                         android:hint="Country"
                         android:inputType="textCapWords"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -207,18 +207,42 @@
                         android:hint="Email Address"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/edit_profile_phone_number"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_below="@+id/email_address_text"
-                    android:fontFamily="@font/quicksand_medium"
-                    android:hint="Phone Number"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="18dp" />
+                    android:id="@+id/phone_number_details"
+                    android:layout_marginLeft="2dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="15dp"
+                            android:text="Phone Number"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/edit_profile_phone_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
 
 
             </RelativeLayout>
@@ -268,6 +292,8 @@
         </RelativeLayout>
 
     </ScrollView>
+
+
 
     <LinearLayout
         android:layout_width="fill_parent"

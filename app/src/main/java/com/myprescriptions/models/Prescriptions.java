@@ -7,15 +7,16 @@ import java.util.ArrayList;
 
 public class Prescriptions implements Serializable {
 
-    String name, email, user_id, details, profile_image, timestamp;
+    String name, email, phone_number, user_id, details, profile_image, timestamp;
     ArrayList<Med> medicine;
 
     public Prescriptions() {
     }
 
-    public Prescriptions(String name, String email, String user_id, String details, String profile_image, String timestamp, ArrayList<Med> medicine) {
+    public Prescriptions(String name, String email, String phone_number, String user_id, String details, String profile_image, String timestamp, ArrayList<Med> medicine) {
         this.name = name;
         this.email = email;
+        this.phone_number = phone_number;
         this.user_id = user_id;
         this.details = details;
         this.profile_image = profile_image;
@@ -37,6 +38,14 @@ public class Prescriptions implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String getUser_id() {

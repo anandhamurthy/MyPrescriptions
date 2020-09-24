@@ -61,6 +61,7 @@ class ResultActivity : AppCompatActivity() {
             hashMap.put("user_id", userObject.User_Id)
             hashMap.put("name", userObject.Name)
             hashMap.put("email", userObject.Email_Id)
+            hashMap.put("phone_number", userObject.Phone_Number)
             hashMap.put("details", userObject.Details)
             hashMap.put("timestamp", userObject.Timestamp)
             hashMap.put("profile_image", userObject.Profile_Image)

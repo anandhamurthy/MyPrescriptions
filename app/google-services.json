@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "578911970885",
+    "firebase_url": "https://my-prescriptions-98483.firebaseio.com",
+    "project_id": "my-prescriptions-98483",
+    "storage_bucket": "my-prescriptions-98483.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578911970885:android:bde23286d4c45a9c24e52c",
+        "android_client_info": {
+          "package_name": "com.myprescriptions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578911970885-l4mlddpf8ga4u36q2e2ou0e9fjfpuudj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myprescriptions",
+            "certificate_hash": "adc8dd1095cb4cf39794a4b2eee34f5ae2e8be6f"
+          }
+        },
+        {
+          "client_id": "578911970885-k9v6sqj7ld5m5nvbtjfo0bhio2lf0err.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdUGrnOlmeJ86xqO6QRQfwim5abnKX5Ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578911970885-k9v6sqj7ld5m5nvbtjfo0bhio2lf0err.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

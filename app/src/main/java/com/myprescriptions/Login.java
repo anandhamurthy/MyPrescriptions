@@ -24,6 +24,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -46,18 +48,20 @@ public class Login extends AppCompatActivity{
 
     private CountryCodePicker Login_Country_Code;
     private EditText Login_Phone_Number;
-    private DatabaseReference mUsersDatabase;
-    private FirebaseAuth mAuth;
-    private FirebaseUser mFirebaseUser;
-    private String mCurrentUserId, Code="+91";
+
+    private String  Code="+91";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setBackgroundDrawableResource(R.drawable.login_bg);
 
         Login_Phone_Number = findViewById(R.id.login_phone_number);
         Login_Country_Code = findViewById(R.id.login_country_code);
-        Login_Country_Code.registerPhoneNumberTextView(Login_Phone_Number);
+
+
+        ScrollView scrollView = (ScrollView)findViewById(R.id.scrollView);
+        scrollView.setEnabled(false);
 
         Login_Country_Code.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
             @Override

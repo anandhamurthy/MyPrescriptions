@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -16,8 +18,12 @@
             android:theme="@style/AppTheme1"/>
         <activity android:name=".QRScannerActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".Login" />
-        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".Login"
+            android:theme="@style/LoginAppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan"/>
+        <activity android:name=".VerifyPhoneActivity"
+            android:theme="@style/LoginAppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan"/>
         <activity
             android:name=".QRActivity"
             android:label="My QR"
@@ -27,6 +33,15 @@
             android:name=".DetailsActivity"
             android:label="Details"
             android:theme="@style/AppTheme1" />
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/LoginAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="My Prescriptions"
@@ -38,15 +53,21 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.myprescriptions.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

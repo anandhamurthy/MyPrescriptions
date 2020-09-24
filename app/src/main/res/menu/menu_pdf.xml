@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/call"
+        android:title="Call" />
+    <item
+        android:id="@+id/pdf"
+        android:title="PDF" />
+
+</menu>
